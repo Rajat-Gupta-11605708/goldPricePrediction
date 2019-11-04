@@ -1,5 +1,5 @@
 from numpy import *
-import fix_yahoo_finance as yf
+import yfinance as yf
 import datetime
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
@@ -93,3 +93,7 @@ y_test.plot()
 plt.legend(['predicted_price','actual_price'])
 plt.ylabel("Gold ETF Price")
 plt.show()
+
+r2_score = linear.score(X[t:],y[t:])*100
+float("{0:.2f}".format(r2_score))
+print("Accuracy : ",r2_score," %")
